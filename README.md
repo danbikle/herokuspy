@@ -60,7 +60,7 @@ Then, I return to the shell and give copy of ann public ssh-key to heroku:
 ~ann/heroku-client/bin/heroku keys:add
 ``` 
 
-Also I create an ann account in Postgres:
+Also, in my local Ubuntu host, I create an ann account in Postgres:
 
 ```
 sudo su - postgres
@@ -87,8 +87,6 @@ I use git to deploy the app to heroku:
 ```
 git push heroku master
 ~ann/heroku-client/bin/heroku run python manage.py migrate
-~ann/heroku-client/bin/heroku open
-
 ```
 
 
