@@ -102,11 +102,11 @@ I start this effort by running some shell commands:
 
 ```
 cd ~/herokuspy
-pip install -r requirements.txt
-createdb python_getting_started
-heroku local:run python manage.py migrate
+~/anaconda3/bin/pippip install -r requirements.txt
+/usr/bin/createdb python_getting_started
+~/heroku-client/bin/heroku local:run python manage.py migrate
 python manage.py collectstatic
-heroku local
+~/heroku-client/bin/heroku local
 ```
 
 My app should now be accepting requests at this URL:
