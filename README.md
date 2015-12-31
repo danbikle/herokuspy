@@ -1,3 +1,96 @@
+# herokuspy
+
+This repository, herokuspy, is under construction.
+
+It should contain more software when I present it to the Python Meetup 2016-01-18:
+
+http://www.meetup.com/BayPIGgies/events/227481217
+
+Until then, herokuspy is under construction.
+
+The herokuspy repository depends on the pyspy repository.
+
+I always install pyspy before I install herokuspy.
+
+It is easy to install pyspy, the repository is at this URL:
+
+https://github.com/danbikle/pyspy
+
+The herokuspy repository is an enhancement of the repository listed below:
+
+https://github.com/heroku/python-getting-started
+
+I like to install herokuspy into this folder:
+
+/home/ann/herokuspy
+
+You could try to install it elsewhere.
+
+Anyway, I do this:
+
+```
+cd ~
+git clone https://github.com/danbikle/herokuspy
+```
+
+Next, I install the Heroku Toolbelt:
+
+```
+cd ~ann
+rm -rf heroku-client.tgz heroku-client
+wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
+tar zxf heroku-client.tgz
+echo 'export PATH=/home/ann/heroku-client/bin:${PATH}' >> ~ann/.bashrc
+echo  export PATH=/home/ann/heroku-client/bin:${PATH}
+```
+
+Then, I create an ssh-key for ann account (assuming ann has none yet).
+
+```
+ssh-keygen -t rsa
+```
+
+Next, I navigate to heroku.com and create an account via the web-ui.
+
+Then, I return to the shell and give copy of ann public ssh-key to heroku:
+```
+~ann/heroku-client/bin/heroku status
+~ann/heroku-client/bin/heroku auth:login
+~ann/heroku-client/bin/heroku auth:whoami
+~ann/heroku-client/bin/heroku keys:add
+``` 
+
+Also I create an ann account in Postgres:
+
+```
+sudo su - postgres
+psql
+CREATE ROLE ann WITH superuser login;
+CREATE DATABASE ann;
+\q
+exit
+```
+ 
+At this point I should be able to create an app on heroku:
+
+```
+cd ~/herokuspy
+heroku create hspy10
+```
+
+You will need to use a different app name than hspy10.
+
+Perhaps hspy11 is available?
+
+I use git to deploy the app to heroku:
+
+```
+git push heroku master
+```
+
+
+The content below was written by the developers at Heroku:
+- - -
 # python-getting-started
 
 A barebones Python app, which can easily be deployed to Heroku.
