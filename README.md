@@ -36,11 +36,11 @@ git clone https://github.com/danbikle/herokuspy
 Next, I install the Heroku Toolbelt:
 
 ```
-cd ~ann
+cd ~
 rm -rf heroku-client.tgz heroku-client
 wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
 tar zxf heroku-client.tgz
-echo 'export PATH=/home/ann/heroku-client/bin:${PATH}' >> ~ann/.bashrc
+echo 'export PATH=/home/ann/heroku-client/bin:${PATH}' >> ~/.bashrc
 bash
 ```
 
@@ -54,15 +54,17 @@ Next, I navigate to heroku.com and create an account via the web-ui.
 
 Then, I return to the shell and give copy of ann public ssh-key to heroku:
 ```
-~ann/heroku-client/bin/heroku status
-~ann/heroku-client/bin/heroku auth:login
-~ann/heroku-client/bin/heroku auth:whoami
-~ann/heroku-client/bin/heroku keys:add
+cd ~/herokuspy
+~/heroku-client/bin/heroku status
+~/heroku-client/bin/heroku auth:login
+~/heroku-client/bin/heroku auth:whoami
+~/heroku-client/bin/heroku keys:add
 ``` 
 
 Also, in my local Ubuntu host, I create an ann account in Postgres:
 
 ```
+cd ~/herokuspy
 sudo su - postgres
 psql
 CREATE ROLE ann WITH superuser login;
@@ -75,7 +77,7 @@ At this point I should be able to create an app on heroku:
 
 ```
 cd ~/herokuspy
-~ann/heroku-client/bin/heroku create hspy10
+~/heroku-client/bin/heroku create hspy10
 ```
 
 You will need to use a different app name than hspy10.
@@ -86,12 +88,32 @@ I use git to deploy the app to heroku:
 
 ```
 git push heroku master
-~ann/heroku-client/bin/heroku run python manage.py migrate
+~/heroku-client/bin/heroku run python manage.py migrate
 ```
 
 I should be able to see my app with a browser:
 
 https://hspy10.herokuapp.com/
+
+
+If I can see my app run on heroku, I should try to run it locally in my Ubuntu host.
+
+I start this effort by running some shell commands:
+
+```
+cd ~/herokuspy
+pip install -r requirements.txt
+createdb python_getting_started
+heroku local:run python manage.py migrate
+python manage.py collectstatic
+heroku local
+```
+
+My app should now be accepting requests at this URL:
+
+http://localhost:5000
+
+# Operation
 
 
 The content below was written by the developers at Heroku:
