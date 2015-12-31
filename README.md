@@ -1,12 +1,8 @@
 # herokuspy
 
-This repository, herokuspy, is under construction.
-
-It should contain more software when I present it to the Python Meetup 2016-01-18:
+I present this repository, herokuspy, to the Python Meetup 2016-01-18:
 
 http://www.meetup.com/BayPIGgies/events/227481217
-
-Until then, herokuspy is under construction.
 
 The herokuspy repository depends on the pyspy repository.
 
