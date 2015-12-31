@@ -115,6 +115,19 @@ http://localhost:5000
 
 # Operation
 
+I operate herokuspy in two different modes.
+
+First, I run a script at 12:50pm Mon-Fri California time which relies on pyspy to observe the current price of the S&P 500 index.
+
+Next, the script uses this new observation to generate the most recent prediction.
+
+This prediction is published to the web so that users can act on it before the market closes at 13:00pm (16:00 NY time).
+
+The script is listed below:
+
+```
+~/herokuspy/bin/noon50.bash
+```
 
 The content below was written by the developers at Heroku:
 - - -
