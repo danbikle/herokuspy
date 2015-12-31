@@ -9,11 +9,10 @@ cat ${DDATA}/learn_test.csv|awk -F, '{print $1","$2","$10","$11}' |sed '1,$s/1.0
 
 # I should add some html
 cd ${HEROKUSPY}/hello/templates
-echo '<pre class="pcsv"><code>' > predictions.html
-echo '<h1>Predictions</h1>'    >> predictions.html
-cat ${STATICF}/predictions.csv >> predictions.html
-echo '</code></pre>'           >> predictions.html
-exit
+echo '<h1>Predictions</h1>'      > predictions.html
+echo '<pre class="pcsv"><code>' >> predictions.html
+cat ${STATICF}/predictions.csv  >> predictions.html
+echo '</code></pre>'            >> predictions.html
 
 cp base_empty.html                           base.html
 sed -i '/predictionsHere/r predictions.html' base.html
