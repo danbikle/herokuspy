@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block my_precode %}my_precode goes here.{% endblock %}
+
 {% block content %}
 
 <a href="{% static  'predictions.csv'%}">predictions.csv</a>
