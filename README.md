@@ -75,7 +75,7 @@ At this point I should be able to create an app on heroku:
 
 ```
 cd ~/herokuspy
-heroku create hspy10
+~ann/heroku-client/bin/heroku create hspy10
 ```
 
 You will need to use a different app name than hspy10.
@@ -86,6 +86,9 @@ I use git to deploy the app to heroku:
 
 ```
 git push heroku master
+~ann/heroku-client/bin/heroku run python manage.py migrate
+~ann/heroku-client/bin/heroku open
+
 ```
 
 
