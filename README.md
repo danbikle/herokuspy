@@ -89,6 +89,10 @@ git push heroku master
 ~ann/heroku-client/bin/heroku run python manage.py migrate
 ```
 
+I should be able to see my app with a browser:
+
+https://hspy10.herokuapp.com/
+
 
 The content below was written by the developers at Heroku:
 - - -
