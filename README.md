@@ -41,7 +41,7 @@ rm -rf heroku-client.tgz heroku-client
 wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
 tar zxf heroku-client.tgz
 echo 'export PATH=/home/ann/heroku-client/bin:${PATH}' >> ~ann/.bashrc
-echo  export PATH=/home/ann/heroku-client/bin:${PATH}
+bash
 ```
 
 Then, I create an ssh-key for ann account (assuming ann has none yet).
