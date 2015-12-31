@@ -129,6 +129,14 @@ The script is listed below:
 ~/herokuspy/bin/noon50.bash
 ```
 
+In the second mode I run a script at 21:00pm Mon-Fri California time which uses the closing price of the S&P 500 index to generate the most recent prediction.
+
+This second script is listed below:
+
+```
+~/herokuspy/bin/night.bash
+```
+
 The content below was written by the developers at Heroku:
 - - -
 # python-getting-started
