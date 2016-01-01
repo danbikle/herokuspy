@@ -13,8 +13,8 @@ echo '<pre class="pcsv"><code>' >> predictions.html
 cat ${STATICF}/predictions.csv  >> predictions.html
 echo '</code></pre>'            >> predictions.html
 
-cp base_empty.html                           base.html
-sed -i '/predictionsHere/r predictions.html' base.html
+# cp base_empty.html                           base.html
+# sed -i '/predictionsHere/r predictions.html' base.html
 # I should publish the changes
 cd $HEROKUSPY
 git commit -am herokuspyRan
