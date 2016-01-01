@@ -49,6 +49,7 @@ ssh-keygen -t rsa
 Next, I navigate to heroku.com and create an account via the web-ui.
 
 Then, I return to the shell and give copy of ann public ssh-key to heroku:
+
 ```
 cd ~/herokuspy
 ~/heroku-client/bin/heroku status
