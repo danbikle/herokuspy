@@ -99,7 +99,7 @@ I start this effort by running some shell commands:
 
 ```
 cd ~/herokuspy
-~/anaconda3/bin/pippip install -r requirements.txt
+~/anaconda3/bin/pip install -r requirements.txt
 /usr/bin/createdb python_getting_started
 ~/heroku-client/bin/heroku local:run python manage.py migrate
 python manage.py collectstatic
